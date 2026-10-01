@@ -106,6 +106,14 @@ function draw() {
     textAlign(CENTER, CENTER);
     text('Team ' + (vakjes[winnendeLijn[0]] === 'red' ? 'rood' : 'blauw') + ' heeft gewonnen!', 300, 560);
     textAlign(LEFT, BASELINE);
+  } else if (beurt === 9) {
+    fill('lightgray');
+    rect(155, 540, 290, 40, 6);
+    fill(0);
+    textSize(20);
+    textAlign(CENTER, CENTER);
+    text('Gelijkspel!', 300, 560);
+    textAlign(LEFT, BASELINE);
   }
 }
 
