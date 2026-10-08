@@ -3,21 +3,34 @@ let draggedBall = null;
 
 function setup() {
   createCanvas(800, 600);
+}
 
-  for (let i = 0; i < 10; i++) {
-    balls.push({
-      x: random(20, width - 20),
-      y: random(20, height - 20),
-      speedX: random(-3, 3),
-      speedY: random(-3, 3),
-      size: random(10, 30),
-      color: [random(255), random(255), random(255)]
-    });
+fill(0);
+function keyPressed() {
+  if (keyCode === BACKSPACE) {
+    if (balls.length === 0) {
+      for (let i = 0; i < 10; i++) {
+        balls.push({
+          x: random(20, width - 20),
+          y: random(20, height - 20),
+          speedX: random(-3, 3),
+          speedY: random(-3, 3),
+          size: random(10, 30),
+          color: [random(255), random(255), random(255)]
+        });
+      }
+    } else {
+      for (let i = 0; i < balls.length; i++) {
+        balls[i].color = [random(255), random(255), random(255)];
+      }
+    }
+
+    return false;
   }
 }
 
 function draw() {
-  background(220);
+  background(0);
 
   for (let i = 0; i < balls.length; i++) {
     let b = balls[i];
@@ -61,5 +74,11 @@ function mouseDragged() {
 
 function mouseReleased() {
   draggedBall = null;
+
+
+
+
+
+
 }
 
