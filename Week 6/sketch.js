@@ -1,7 +1,39 @@
+let kirbyidle ;
+let minecraftpainting1;
+
+function preload(){
+  kirbyidle = loadImage('kirby idle.jpg');
+  minecraftpainting1 = loadImage('minecraft painting1.jpg');
+}
+
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(800, 600);
 }
 
 function draw() {
-  background(220);
+  background(20, 126, 186);
+  
+  fill(148, 208, 242)
+  rect(0,0,800,300)
+  
+  image(kirbyidle,200,200,150,150);
+
+  image(minecraftpainting1,300,0,200,200); 
+
+  
+
+  // bed
+fill('brown')
+rect(400,400,100,50)
+rect(400, 250, 100, 50)
+fill('gray')
+rect(405,280,90,120)
+fill('red')
+rect(405, 300, 90, 100)
+//pillows
+fill('white')
+rect(405,270,40,25,25)
+rect(450, 270, 40, 25, 25)
+
 }
+  
