@@ -1,6 +1,8 @@
 let honger = 0;
 let slaap = 100;
 let plezier = 100
+let blij = 100
+
 
 let kirbyeat;
 let kirbyidle;
@@ -78,6 +80,11 @@ function draw() {
     slaap = 0
   }
 
+  plezier = plezier - 0.12;
+
+  if (plezier > 100) {
+    plezier = 100
+  }
 
   // bed
   fill('brown')
@@ -92,19 +99,14 @@ function draw() {
   rect(405, 270, 40, 25, 25)
   rect(450, 270, 40, 25, 25)
 
+  
+  
   if (slaap < 20) {
     image(kirbysleep, 400, 250, 100, 100)
   }
   else {
     image(kirbyidle, 200, 200, 150, 150)
   }
-
-
-
-
-
-
-
   // honger bar
   noStroke()
   fill(0)
@@ -130,8 +132,22 @@ function draw() {
   fill(0)
   rect(20, 140, 200, 25, 25)
   fill(70, 190, 90)
+  fill(240, 206, 17)
   rect(20, 140, plezier * 2, 25, 25);
   fill(0)
   text("plezier:" + floor(plezier) + "%", 20, 180);
 
+  noStroke()
+  fill(0)
+  rect(20, 140, 200, 25, 25)
+  fill(70, 190, 90)
+  fill(240, 73, 17)
+  rect(20, 140, blij * 2, 25, 25);
+  fill(0)
+  text("blij:" + floor(blij) + "%", 20, 240);
+
+
+  if (honger <= 0 || slaap <= 0) {
+    text('you died', 350, 300);
+  }
 }
